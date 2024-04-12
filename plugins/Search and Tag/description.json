@@ -1,0 +1,250 @@
+{
+    "description": "🔎🏷️ Search and Tag Plugin by Felis Cabral - Search case columns and tag results.",
+    "version": 1.1,
+    "schema":
+    [
+
+         {
+              "name": "custom heading field",
+              "description": "",
+              "elementType": {
+                "CustomFieldHeading": {
+                  "value": "🔎🏷️ Search and Tag Plugin by Felis Cabral - Search case columns and tag results."
+                }
+              }
+         },
+         {
+              "name": "Enable Plugin",
+              "variableName": "SAT_ENABLED",
+              "required": true,
+              "elementType": {
+                "CustomFieldCheckbox": {
+                  "defaultValue": true
+              } }
+         },
+         {
+              "name": "Output log.txt",
+              "variableName": "SAT_OUTPUT_LOG",
+              "required": true,
+              "elementType": {
+                "CustomFieldCheckbox": {
+                  "defaultValue": true
+              } }
+         },
+         {
+              "name": "Create tag if no results are found",
+              "variableName": "SAT_EMPTY_TAG",
+              "required": true,
+              "elementType": {
+                "CustomFieldCheckbox": {
+                  "defaultValue": true
+              } }
+         },
+         {
+              "name": "Exit with error code 1 if no results are found (produce failure)",
+              "variableName": "SAT_NO_RESULT_FAIL",
+              "required": true,
+              "elementType": {
+                "CustomFieldCheckbox": {
+                  "defaultValue": false
+              } }
+         },
+         {
+              "name": "Case Path",
+              "description": "",
+              "variableName": "SAT_CASE_PATH",
+               "required": true,
+              "elementType": {
+                   "CustomFieldInput": {
+                   "hintText": "hint",
+                   "defaultValue": "${OUTPUT_PATH}\\..\\AXIOM_Process",
+                   "lineHeight": 1
+              } }
+         },
+         {
+              "name": "Tag Name",
+              "description": "",
+              "variableName": "SAT_TAG_NAME",
+               "required": true,
+              "elementType": {
+                   "CustomFieldInput": {
+                   "hintText": "Required. Example: Emails from ACME",
+                   "defaultValue": "",
+                   "lineHeight": 1
+              } }
+         },
+         {
+           "name": "custom heading field",
+           "description": "",
+           "elementType": {
+             "CustomFieldHeading": {
+               "value": "Use @value for Definition Value / search word (example: Emails From @value)"
+             }
+           }
+         },
+         {
+              "name": "Tag Color",
+              "description": "",
+              "variableName": "SAT_TAG_COLOR",
+              "required": true,
+              "elementType": {
+              "CustomFieldDropDownList": {
+                   "defaultValue": "Green",
+                   "hintText": "Choose a value.",
+                        "enum": ["[random]", "Green", "Red", "Yellow", "Orange", "Violete", "Blue", "Light Blue", "Pink"]
+              } }
+         },
+         {
+              "name": "custom heading field",
+              "description": "",
+              "elementType": {
+                "CustomFieldHeading": {
+                  "value": "If tag name already exist the color will not change."
+                }
+              }
+         },
+         {
+              "name": "Definition Name (field)",
+              "description": "",
+              "variableName": "SAT_DEFINITION_NAME",
+              "required": true,
+              "elementType": {
+                   "CustomFieldInput": {
+                   "hintText": "Required. Example: Sender Name",
+                   "defaultValue": "",
+                   "lineHeight": 1
+              } }
+         },
+         {
+              "name": "Operation",
+              "description": "",
+              "variableName": "SAT_OPERATION",
+              "required": true,
+              "elementType": {
+              "CustomFieldDropDownList": {
+                   "defaultValue": "contains",
+                   "hintText": "Choose a value.",
+                        "enum": ["begins with", "ends with", "contains", "not contains", "equals", "not equals"]
+              } }
+         },
+         {
+              "name": "Definition Value / search word(s)",
+              "description": "",
+              "variableName": "SAT_DEFINITION_VALUE",
+              "required": true,
+              "elementType": {
+                   "CustomFieldInput": {
+                   "hintText": "Required. Example: @acme.com, @acmecorp.com",
+                   "defaultValue": "",
+                   "lineHeight": 1
+              } }
+         },
+         {
+              "name": "custom heading field",
+              "description": "",
+              "elementType": {
+                "CustomFieldHeading": {
+                  "value": "Separate multiple words by comma. Search will return either first \"OR\" the following words after each comma."
+                }
+              }
+         },
+         {
+              "name": "custom heading field",
+              "description": "",
+              "elementType": {
+                "CustomFieldHeading": {
+                  "value": "Definition name (field) and values are populated on the DETAILS pane when displaying artifacts within AXIOM Examine. Definition Name 'left side' of details pane, must be entered exactly as displayed in AXIOM."
+                }
+              }
+         },
+         {
+              "name": "custom heading field",
+              "description": "",
+              "elementType": {
+                "CustomFieldHeading": {
+                  "value": "Example 1: File Extension equals .pdf, .doc, .docx"
+                }
+              }
+         },
+         {
+              "name": "custom heading field",
+              "description": "",
+              "elementType": {
+                "CustomFieldHeading": {
+                  "value": "Example 2: MD5 Hash equals f9d5e8e85a9a9dbcadd5ce3757894e19, 8f6c30cbb86c8686b6176a94deeb0e3b, afba1dff0afa047926d748b175cf4ed3"
+                }
+              }
+         },
+         {
+              "name": "custom heading field",
+              "description": "",
+              "elementType": {
+                "CustomFieldHeading": {
+                  "value": "Example 3: File Name equals doc1.pdf, doc2.pdf, doc3.doc"
+                }
+              }
+         },
+         {
+              "name": "custom heading field",
+              "description": "",
+              "elementType": {
+                "CustomFieldHeading": {
+                  "value": "Example 4: PREVIEW contains john doe, jane doe"
+                }
+              }
+         },
+         {
+              "name": "custom heading field",
+              "description": "",
+              "elementType": {
+                "CustomFieldHeading": {
+                  "value": "Example 5: Folder Name contains Sent Items, Deleted Items"
+                }
+              }
+         },
+         {
+              "name": "custom heading field",
+              "description": "",
+              "elementType": {
+                "CustomFieldHeading": {
+                  "value": "Example 6: Sender Name contains @acme.com, @acmecorp.com"
+                }
+              }
+         },
+         {
+              "name": "custom heading field",
+              "description": "",
+              "elementType": {
+                "CustomFieldHeading": {
+                  "value": "Example 8: Event Data contains <EventID>4634</EventID>"
+                }
+              }
+         },
+         {
+              "name": "custom heading field",
+              "description": "",
+              "elementType": {
+                "CustomFieldHeading": {
+                  "value": "Example 9: DATE-RANGE contains 2023-01-01T00:00:00Z to 2023-12-31T11:59:59Z"
+                }
+              }
+         },
+         {
+              "name": "custom heading field",
+              "description": "",
+              "elementType": {
+                "CustomFieldHeading": {
+                  "value": "Example 10: DATE-RANGE contains ${originalImageFolder}\\dates.txt"
+                }
+              }
+         },
+         {
+              "name": "custom heading field",
+              "description": "",
+              "elementType": {
+                "CustomFieldHeading": {
+                  "value": "⚠️ Not all special characters are suppported in Definition Value / search (word(s)"
+                }
+              }
+         }
+    ] }
